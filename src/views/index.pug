@@ -1,0 +1,18 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+	- const title = "Index"
+
+block content
+	#wrapper.blockattach
+		include ../blocks/modules/header/header.pug
+
+		.blockattach__content
+
+		include ../blocks/modules/footer/footer.pug
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")
+
