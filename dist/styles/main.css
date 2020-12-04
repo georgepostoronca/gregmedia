@@ -49,6 +49,45 @@ section {
   box-sizing: border-box;
 }
 
+a {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #272727;
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #272727;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  transition: .2s;
+}
+
+a.link-email:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  transition: .2s;
+  border-bottom: 2px dashed #272727;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -430,13 +469,16 @@ template {
 }
 
 .header {
-  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header__wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 108px;
 }
 
@@ -452,12 +494,17 @@ template {
 
 .header__logo {
   display: inline-block;
+  margin-right: 100px;
 }
 
 .header__logo svg {
   display: block;
   width: 123px;
   height: 24px;
+}
+
+.header__nav {
+  flex: 1;
 }
 
 .header__nav ul {
@@ -479,11 +526,53 @@ template {
   margin-left: auto;
 }
 
-.header__nav a {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  color: #272727;
-  text-decoration: none;
+.header__mail {
+  margin-left: 50px;
+}
+
+@media (max-width: 1294px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1214px) {
+  .container-min {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .header__logo {
+    margin-right: 50px;
+  }
+
+  .header__nav li {
+    margin-left: 20px;
+  }
+
+  .header__mail {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  a {
+    font-size: 16px;
+  }
+
+  .header__mail {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 820px) {
+  .header__logo {
+    margin-right: 20px;
+  }
+
+  .header__nav li {
+    margin-left: 10px;
+  }
 }
 /*# sourceMappingURL=maps/main.css.map */

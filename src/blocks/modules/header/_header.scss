@@ -1,10 +1,13 @@
 .header {
-  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 
   &__wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 108px;
   }
 
@@ -20,6 +23,15 @@
 
   &__logo {
     display: inline-block;
+    margin-right: 100px;
+
+    @media(max-width: 1080px) {
+      margin-right: 50px;
+    }
+
+    @media(max-width: 820px) {
+      margin-right: 20px;
+    }
 
     svg {
       display: block;
@@ -29,6 +41,7 @@
   }
 
   &__nav {
+    flex: 1;
     ul {
       display: flex;
       margin: 0;
@@ -39,21 +52,40 @@
     li {
       margin-left: 50px;
 
+      @media(max-width: 1080px) {
+        margin-left: 20px;
+      }
+
+      @media(max-width: 820px) {
+        margin-left: 10px;
+      }
+
       &:first-child {
         margin-left: 0;
       }
-      
+
       &.space-between {
         margin-left: auto;
       }
     }
 
     a {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      color: #272727;
-      text-decoration: none
+    }
+  }
+
+  &__mail {
+    margin-left: 50px;
+
+    @media(max-width: 1080px) {
+      margin-left: 20px;
+    }
+
+    @media(max-width: 992px) {
+      margin-left: 10px;
+    }
+
+    a {
+
     }
   }
 }
