@@ -31,11 +31,6 @@ section {
   width: 100%;
 }
 
-.section {
-  height: 100vh;
-  min-height: 100vh;
-}
-
 .container {
   width: 1294px;
   padding-left: 20px;
@@ -125,16 +120,50 @@ a {
 }
 
 .section {
+  box-shadow: inset 0 0 1px 1px red;
   width: 100%;
+  //height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: stretch;
+
+  &__content {
+    //height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__text {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    p {
+      width: 80%;
+      margin-bottom: 113px;
+
+      @media(max-width: 768px) {
+        width: 100%;
+        margin-bottom: 87px;
+      }
+    }
+  }
 }
 
 h1, h2 {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 900;
   font-size: 70px;
   line-height: 82px;
   margin-top: 0;
   margin-bottom: 30px;
+
+  @media(max-width: 768px) {
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 49px;
+  }
 }
 
 h1.max {
@@ -174,7 +203,14 @@ p {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 26px;
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  @media(max-width: 680px) {
+    font-size: 13px;
+    line-height: 24px;
+  }
 
   &.min {
     font-size: 9px;
@@ -210,5 +246,34 @@ span {
     width: 17px;
     height: 34px;
     fill: #fff;
+  }
+}
+
+.down {
+  width: 23px;
+  height: 57px;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  z-index: 4;
+
+  @media(max-width: 768px) {
+    //margin-bottom: 71px;
+  }
+
+  &:hover {
+    svg {
+      transform: translateY(10px);
+      opacity: .8;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    transition: .2s;
   }
 }
