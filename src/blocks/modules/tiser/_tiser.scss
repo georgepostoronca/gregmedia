@@ -3,6 +3,16 @@
   padding-top: 108px;
   overflow: hidden;
 
+  @media(max-width: 768px) {
+    padding-top: 68px;
+  }
+
+  @media(max-height: 600px) {
+    &.section {
+      height: auto;
+    }
+  }
+
   &__wrap {
     position: relative;
     height: 100%;
@@ -16,6 +26,10 @@
       left: 15%;
       display: block;
       background: url("../img/min-dotted.svg") center center no-repeat;
+
+      @media(max-width: 768px) {
+        display: none;
+      }
     }
 
     &:before {
@@ -28,6 +42,13 @@
       left: 4.5%;
       border-radius: 100%;
       background: linear-gradient(182.79deg, #FF9785 -25.17%, #FF9092 18.4%, #ED76D3 75.54%, #DA46FF 111.98%);
+
+      @media(max-width: 768px) {
+        width: 75px;
+        height: 75px;
+        top: -73px;
+        left: -40px;
+      }
     }
   }
 
@@ -35,11 +56,22 @@
     position: absolute;
     z-index: 2;
     width: 708px;
-    height: 666px;
+    //height: 666px;
+    transition: .2s;
 
 
     margin-top: -118px;
     left: 12.8%;
+
+    @media(max-width: 1300px) {
+      margin-top: 0;
+      width: 80%;
+    }
+
+    @media(max-width: 768px) {
+      left: 16.8%;
+      top: 3.6%;
+    }
   }
 
   &__content {
@@ -52,6 +84,14 @@
     position: relative;
     z-index: 5;
 
+    @media(max-width: 768px) {
+      padding-bottom: 0;
+      //justify-content: flex-start;
+      //padding-top: 252px;
+      padding-top: 0;
+      padding-bottom: 60px;
+    }
+
     &:after {
       content: "";
       width: 91px;
@@ -62,6 +102,15 @@
       display: block;
       background: url("../img/min-dotted.svg") center center no-repeat;
       z-index: 3;
+
+      @media(max-width: 768px) {
+        bottom: inherit;
+        top: 37.3%;
+        left: 15.5%;
+        width: 19vw;
+        height: 19vw;
+        background: url("../img/dotted-mobile.svg") center center no-repeat;
+      }
     }
 
     &:before {
@@ -74,6 +123,15 @@
       display: block;
       background: url("../img/dotted.svg") center center no-repeat;
       z-index: 1;
+
+      @media(max-width: 768px) {
+        width: 40vw;
+        height: 37vw;
+        position: absolute;
+        top: -1.3%;
+        right: -4.3%;
+        background: url("../img/dotted-middle.svg") center center no-repeat;
+      }
     }
 
     h1 {
@@ -81,6 +139,10 @@
       margin-left: -4px;
       position: relative;
       z-index: 4;
+
+      @media(max-width: 768px) {
+        margin-bottom: 8px;
+      }
     }
 
     span {
@@ -90,6 +152,12 @@
       margin-bottom: 93px;
       position: relative;
       z-index: 4;
+
+      @media(max-width: 768px) {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 98px;
+      }
     }
 
     .down {
@@ -103,6 +171,10 @@
       outline: none;
       position: relative;
       z-index: 4;
+
+      @media(max-width: 768px) {
+        //margin-bottom: 71px;
+      }
 
       &:hover {
         svg {

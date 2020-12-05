@@ -411,6 +411,11 @@ section {
   width: 100%;
 }
 
+.section {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 .container {
   width: 1294px;
   padding-left: 20px;
@@ -698,7 +703,7 @@ span {
   position: absolute;
   z-index: 2;
   width: 708px;
-  height: 666px;
+  transition: .2s;
   margin-top: -118px;
   left: 12.8%;
 }
@@ -784,6 +789,13 @@ span {
   }
 }
 
+@media (max-width: 1300px) {
+  .tiser__bg {
+    margin-top: 0;
+    width: 80%;
+  }
+}
+
 @media (max-width: 1214px) {
   .container-min {
     width: 100%;
@@ -809,6 +821,11 @@ span {
     font-size: 16px;
   }
 
+  h1.max {
+    font-size: 90px;
+    line-height: 1.2;
+  }
+
   .header__mail {
     margin-left: 10px;
   }
@@ -831,8 +848,76 @@ span {
 }
 
 @media (max-width: 768px) {
+  h1.max {
+    font-size: 75px;
+  }
+
+  .header__wrap {
+    height: 68px;
+  }
+
   .footer {
     height: 60px;
+  }
+
+  .tiser {
+    padding-top: 68px;
+  }
+
+  .tiser__wrap:after {
+    display: none;
+  }
+
+  .tiser__wrap:before {
+    width: 75px;
+    height: 75px;
+    top: -73px;
+    left: -40px;
+  }
+
+  .tiser__bg {
+    left: 16.8%;
+    top: 3.6%;
+  }
+
+  .tiser__content {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+
+  .tiser__content:after {
+    bottom: inherit;
+    top: 37.3%;
+    left: 15.5%;
+    width: 19vw;
+    height: 19vw;
+    background: url("../img/dotted-mobile.svg") center center no-repeat;
+  }
+
+  .tiser__content:before {
+    width: 40vw;
+    height: 37vw;
+    position: absolute;
+    top: -1.3%;
+    right: -4.3%;
+    background: url("../img/dotted-middle.svg") center center no-repeat;
+  }
+
+  .tiser__content h1 {
+    margin-bottom: 8px;
+  }
+
+  .tiser__content span {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 98px;
+  }
+}
+
+@media (max-width: 580px) {
+  h1.max {
+    font-size: 55px;
   }
 }
 
@@ -845,6 +930,18 @@ span {
     width: 15px;
     height: 15px;
     margin-left: 9px;
+  }
+}
+
+@media (max-width: 370px) {
+  h1.max {
+    font-size: 40px;
+  }
+}
+
+@media (max-height: 600px) {
+  .tiser.section {
+    height: auto;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
