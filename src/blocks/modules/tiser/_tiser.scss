@@ -159,15 +159,5 @@
         margin-bottom: 98px;
       }
     }
-
-    .down {
-      margin-left: -10px;
-      position: relative;
-      z-index: 4;
-
-      @media(max-width: 768px) {
-        //margin-bottom: 71px;
-      }
-    }
   }
 }

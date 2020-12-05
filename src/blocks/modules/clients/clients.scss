@@ -1,0 +1,80 @@
+.clients {
+  &__slider {
+    width: 100%;
+    margin-top: 20px;
+
+    @media(max-width: 768px) {
+      margin-top: 0;
+    }
+  }
+
+  .swiper-slide {
+    height: 100px;
+  }
+}
+
+.swiper {
+  &-container {
+    padding-bottom: 60px;
+  }
+
+  &-wrapper {
+
+  }
+
+  &-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &-button {
+    &-prev, &-next {
+      width: 40px;
+      height: 19px;
+
+      margin-top: 0;
+      top: inherit;
+      bottom: 10px;
+      left: 0;
+      transition: .2s;
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 200%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+
+    &-prev {
+    }
+
+    &-next {
+      left: 58px;
+    }
+  }
+}

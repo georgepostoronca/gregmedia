@@ -1,11 +1,16 @@
 .agency {
   &__wrap {
     p {
-      margin-bottom: 113px;
+      //margin-bottom: 113px;
     }
 
     .down {
+      margin-left: -10px;
+      margin-top: 113px;
 
+      @media(max-width: 768px) {
+        margin-top: 67px;
+      }
     }
   }
 }
