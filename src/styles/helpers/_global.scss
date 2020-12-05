@@ -140,11 +140,15 @@ a {
     padding-bottom: 50px;
 
     p {
-      width: 80%;
+      width: 66%;
       margin-bottom: 113px;
 
-      @media(max-width: 768px) {
+      @media(max-width: 1300px) {
         width: 100%;
+      }
+
+      @media(max-width: 768px) {
+        //width: 100%;
         margin-bottom: 87px;
       }
     }
@@ -157,7 +161,7 @@ h1, h2 {
   font-size: 70px;
   line-height: 82px;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
 
   @media(max-width: 768px) {
     margin-bottom: 20px;
