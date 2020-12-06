@@ -1,4 +1,5 @@
-! function(e) {
+// let isMobile;
+!function (e) {
   var i = /iPhone/i,
     a = /iPod/i,
     t = /iPad/i,
@@ -14,10 +15,10 @@
     v = /(CriOS|Chrome)(?=.*\bMobile\b)/i,
     p = /(?=.*\bFirefox\b)(?=.*\bMobile\b)/i,
     f = new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)", "i"),
-    y = function(e, i) {
+    y = function (e, i) {
       return e.test(i)
     },
-    x = function(e) {
+    x = function (e) {
       var x = e || navigator.userAgent,
         w = x.split("[FBAN");
       if (void 0 !== w[1] && (x = w[0]), void 0 !== (w = x.split("Twitter"))[1] && (x = w[0]), this.apple = {
@@ -46,12 +47,12 @@
         device: y(l, x) || y(h, x) || y(u, x) || y(p, x) || y(v, x)
       }, this.seven_inch = y(f, x), this.any = this.apple.device || this.android.device || this.windows.device || this.other.device || this.seven_inch, this.phone = this.apple.phone || this.android.phone || this.windows.phone, this.tablet = this.apple.tablet || this.android.tablet || this.windows.tablet, "undefined" == typeof window) return this
     },
-    w = function() {
+    w = function () {
       var e = new x;
       return e.Class = x, e
     };
   "undefined" != typeof module && module.exports && "undefined" == typeof window ? module.exports = x : "undefined" != typeof module && module.exports && "undefined" != typeof window ? module.exports = w() : "function" == typeof define && define.amd ? define("isMobile", [], e.isMobile = w()) : e.isMobile = w()
-}(this), $(function() {
+}(this), $(function () {
   function e(e) {
     var i = r.width(),
       a = r.height();
@@ -90,11 +91,11 @@
   function n(e, i) {
     return ~~(Math.random() * (i - e + 1) + e)
   }
+
   var o = this,
     r = $(".bg-animation");
-  console.log(o)
   if (r.length) {
-    Math.min(function() {
+    Math.min(function () {
       var e = 1;
       return void 0 !== window.screen.systemXDPI && void 0 !== window.screen.logicalXDPI && window.screen.systemXDPI > window.screen.logicalXDPI ? e = window.screen.systemXDPI / window.screen.logicalXDPI : void 0 !== window.devicePixelRatio && (e = window.devicePixelRatio), e
     }(), 2);
@@ -113,9 +114,9 @@
       A = isMobile ? 100 : 0,
       P = canvas = document.createElement("canvas");
     r.append(canvas), ctx = canvas.getContext("2d"), stage = new createjs.Stage(canvas);
-    var T = function() {
+    var T = function () {
         requestAnimationFrame(T, P),
-          function() {
+          function () {
             for (var e = 0; e < z.length; e++) {
               var i = z[e][0].getBoundingClientRect(),
                 a = i.height / 2,
@@ -135,7 +136,7 @@
       R = [.2, .8];
     b = [];
     var z = [];
-    $("[data-bg-color]").each(function(e, i) {
+    $("[data-bg-color]").each(function (e, i) {
       var a = $(i);
       z.push(a);
       var t = a.data("bg-color");
@@ -155,14 +156,18 @@
         var q = i(j, b[k], D._blur, !0);
         q.visible = 0 == k, q.alpha = 0 == k ? 1 : 0, O.images.push(q), O.addChild(q)
       }
-      O.current_image_index = 0, O.current_image = O.images[O.current_image_index], O._cache = function(e, i) {
+      O.current_image_index = 0, O.current_image = O.images[O.current_image_index], O._cache = function (e, i) {
         e.cache(0, 0, 2 * i, 2 * i)
       }.bind(this, O, j), O._cache(), K.push(D)
+
+      setTimeout(function() {
+        document.body.classList.add("circle-loaded");
+      });
     }
     var E, H, N, L = -d,
       Y = -c,
       J = (Math.PI, []);
-    r.on("bg:hide", function(e, i) {
+    r.on("bg:hide", function (e, i) {
       var a = void 0 !== (i = i || {}).duration ? i.duration : .7;
       o.is_hided = !0;
       for (var t = 0, n = J.length; n--;) {
@@ -176,30 +181,31 @@
           x: d,
           y: c,
           ease: Quad.easeIn,
-          onComplete: function(e) {
+          onComplete: function (e) {
             e.visible = !1, --t <= 0 && i.onComplete && i.onComplete()
           }.bind(this, r)
         })
       }
-    }).on("bg:show", function(e, i) {
+    }).on("bg:show", function (e, i) {
       for (var a = void 0 !== (i = i || {}).duration ? i.duration : 1, t = 0, n = J.length; n--;) {
         var r = J[n];
         r.visible = !0, t++, TweenMax.killTweensOf(r), TweenMax.to(r, a, {
           x: r._x_before_hide,
           y: r._y_before_hide,
           ease: Quad.easeOut,
-          onComplete: function(e) {
+          onComplete: function (e) {
             --t <= 0 && (o.is_hided = !1, i.onComplete && i.onComplete())
           }
         })
       }
     });
-    f.on("resize", function() {
+    f.on("resize", function () {
       clearTimeout(C), C = setTimeout(e, 5), e()
-    }), e(), isMobile.any ? (p = new function(e) {
+    }), e(), isMobile.any ? (p = new function (e) {
       function i() {
         90 == window.orientation || -90 == window.orientation ? a.orientation = n : a.orientation = t
       }
+
       var a = this,
         t = a.PORTRAIT = 1,
         n = a.LANDSCAPE = 2;
@@ -226,33 +232,34 @@
         };
       a.has_rotation_rate = !1, a.inertion = .125;
       var c;
-      return void 0 != window.DeviceMotionEvent && (window.ondevicemotion = function(e) {
-        null != e.accelerationIncludingGravity.x && function(e, i) {
+      return void 0 != window.DeviceMotionEvent && (window.ondevicemotion = function (e) {
+        null != e.accelerationIncludingGravity.x && function (e, i) {
           e.x = i.x, e.y = i.y, e.z = i.z
         }(o, e.accelerationIncludingGravity), e.rotationRate && null != e.rotationRate.alpha && (a.has_rotation_rate = !0, c = e.rotationRate, d.alpha = e.rotationRate.alpha, d.beta = e.rotationRate.beta, d.gamma = e.rotationRate.gamma)
-      }), a.update = function() {
+      }), a.update = function () {
         r.x += (o.x - r.x) * a.inertion, r.y += (o.y - r.y) * a.inertion, r.z += (o.z - r.z) * a.inertion, s.alpha = (d.alpha - s.alpha) * a.inertion, s.beta = (d.beta - s.beta) * a.inertion, s.gamma = (d.gamma - s.gamma) * a.inertion
-      }, window.addEventListener("orientationchange", function(a) {
+      }, window.addEventListener("orientationchange", function (a) {
         i(), e && e()
       }, !1), i(), a
     }
-    (function() {
-      setTimeout(function() {
+    (function () {
+      setTimeout(function () {
         e()
       }, 100)
     }),
-      function() {
+      function () {
         function e() {
           return Math.random() * o._size + 5.5 * o._size
         }
+
         for (var i = y.outerHeight(), t = W.length, n = 0; n < W.length; n++)
           for (var o = K[n], r = (e(), 0); r < i + o._size; r += e()) {
             var d = a(o.mixed_sprite.cacheCanvas, n, o._size);
-            d.px = function(e, i) {
+            d.px = function (e, i) {
               return Math.random() * (i - e) + e
             }(-.2, 1.2), d.py = r / i, d.scaleX *= .6, d.scaleY *= .6, d.depth = .1 * (n + Math.random() - t)
           }
-      }(), updateParticles = function() {
+      }(), updateParticles = function () {
       p.update(), p.orientation == p.PORTRAIT ? (N = 0 == window.orientation ? 1 : -1, E = -40 * p.accelerationIncludingGravity_i.x * N, H = 40 * p.accelerationIncludingGravity_i.y * N) : (N = 90 == window.orientation ? 1 : -1, E = 40 * p.accelerationIncludingGravity_i.y * N, H = 40 * p.accelerationIncludingGravity_i.x * N);
       for (var e = ~~y.width(), i = ~~y.outerHeight(), a = f.scrollTop(), t = a + l, n = J.length; n--;) {
         var o = J[n];
@@ -260,11 +267,11 @@
         var r = (o.y - t) * o.depth;
         o.y += r, o.x += E * o.depth, o.y += H * o.depth
       }
-    }) : (f.on("mousemove", function(e) {
+    }) : (f.on("mousemove", function (e) {
       L = e.clientX, Y = e.clientY
-    }).on("mouseleave", function() {
+    }).on("mouseleave", function () {
       L = -1e4, Y = -1e4
-    }), function() {
+    }), function () {
       for (var e = 0; e < W.length; e++)
         for (var i = K[e], t = 0; t < i._count; t++) {
           var o = a(i.mixed_sprite.cacheCanvas, e, i._size);
@@ -279,7 +286,7 @@
           } else o.x = o.px = n(0, d), o.y = o.py = n(0, c);
           o.t = 10 * Math.random(), o.t_speed = .003 * Math.random() + .001, o.chaos_speed = .003 * Math.random() + .001
         }
-    }(), updateParticles = function() {
+    }(), updateParticles = function () {
       if (!o.is_hided)
         for (var e = J.length; e--;) {
           var i = J[e],
@@ -299,7 +306,7 @@
               },
               b = Math.sqrt(w.x * w.x + w.y * w.y);
             t(i.x, i.y, "red");
-            var g = function(e, i) {
+            var g = function (e, i) {
               var a = Math.atan2(i, e),
                 n = {
                   x: Math.cos(a) * h,
@@ -310,14 +317,14 @@
             }(w.x, w.y);
             if (b < g) {
               var _ = 1 - b / g;
-              ! function(e) {
+              !function (e) {
                 var i = Math.sqrt(e.x * e.x + e.y * e.y);
                 i = 1 / i, e.x *= i, e.y *= i
               }(w),
-                function(e) {
+                function (e) {
                   e.x = -e.x, e.y = -e.y
                 }(w),
-                function(e, i) {
+                function (e, i) {
                   e.x *= i, e.y *= i
                 }(w, _), i.vx += w.x, i.vy += w.y
             }
@@ -327,8 +334,4 @@
     }), T();
     var Q
   }
-});
-
-setTimeout(function() {
-  // $(".bg-animation").trigger("bg:hide");
 });

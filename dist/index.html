@@ -148,6 +148,172 @@
             </div>
           </div>
         </div>
+        <div class="brief section section-index" id="contacts" data-bg-color="#FF9092;#FE7EB9" data-section-index="6">
+          <div class="brief__wrap container-min section__text">
+            <script>
+              function submitForm(form) {
+                console.log(form)
+              }
+              
+            </script>
+            <form class="js-form-validator" data-submit="submitForm">
+              <h2>Заполните бриф</h2>
+              <p>Оставьте заявку, либо звоните, мы пообщаемся и сами все за вас заполним: +38 (068) 112 112 8</p>
+              <div class="brief__label">
+                <h3>Укажите тип Вашего проекта</h3>
+                <div class="brief__label-items">
+                  <div class="brief__radio">
+                    <input type="radio" name="type-project" id="service-portal">
+                    <label for="service-portal">Cервис или портал</label>
+                  </div>
+                  <div class="brief__radio">
+                    <input type="radio" name="type-project" id="dev-integ">
+                    <label for="dev-integ">Разработка и интеграция</label>
+                  </div>
+                  <div class="brief__radio">
+                    <input type="radio" name="type-project" id="internet-mag">
+                    <label for="internet-mag">Интернет-магазин</label>
+                  </div>
+                  <div class="brief__radio">
+                    <input type="radio" name="type-project" id="lending">
+                    <label for="lending">Лендинг</label>
+                  </div>
+                  <div class="brief__radio">
+                    <input type="radio" name="type-project" id="proj-other">
+                    <label for="proj-other">Другое</label>
+                  </div>
+                </div>
+              </div>
+              <div class="brief__label">
+                <h3>Выберите необходимые услуги</h3>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="create-site">
+                  <label for="create-site">Создание сайта</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="serv-dev-integ">
+                  <label for="serv-dev-integ">Разработка и интеграция</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="serv-design">
+                  <label for="serv-design">Дизайн</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="strategy-prod">
+                  <label for="strategy-prod">Стратегия продвижения</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="search-optim">
+                  <label for="search-optim">Поисковая оптимизация</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="ads-company">
+                  <label for="ads-company">Рекламная компания</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="serv-marketing">
+                  <label for="serv-marketing">Маркетинговое исследование</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="serv-support">
+                  <label for="serv-support">Поддержка</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="select-service" id="serv-other">
+                  <label for="serv-other">Другое</label>
+                </div>
+              </div>
+              <div class="brief__label">
+                <h3>Предполагаемый бюджет</h3>
+                <div class="brief__radio">
+                  <input type="radio" name="estimated-budget" id="dollors-800">
+                  <label for="dollors-800">Менее $300</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="estimated-budget" id="dollors-300-500">
+                  <label for="dollors-300-500">$300-$500</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="estimated-budget" id="dollors-500-1000">
+                  <label for="dollors-500-1000">$500-$1000</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="estimated-budget" id="dollors-1000-2500">
+                  <label for="dollors-1000-2500">$1000-$2500</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="estimated-budget" id="dollors-2500-5000">
+                  <label for="dollors-2500-5000">$2500-$5000</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="estimated-budget" id="dollors-5000-10000">
+                  <label for="dollors-5000-10000">$5000-$10000</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="estimated-budget" id="dollors-10000">
+                  <label for="dollors-10000">Более $10000</label>
+                </div>
+              </div>
+              <div class="brief__input">
+                <h3>Задача</h3>
+                <div class="half">
+                  <input placeholder="Описание" type="text" name="desc" required>
+                </div>
+                <div class="input-file">
+                  <input type="file" name="file" id="input-file">
+                  <label class="btn-ico" for="input-file">
+                    <svg class="icon">
+                      <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                    </svg><span>Прикрепить файл</span>
+                  </label>
+                </div>
+                <div class="half">
+                  <input placeholder="Ваше имя" name="name" type="text" required>
+                  <input class="js-phone-mask" placeholder="Ваш телефон" type="phone" name="phone" required>
+                  <input placeholder="E-mail" type="email" name="email" required>
+                </div>
+              </div>
+              <div class="brief__label brief__label--last">
+                <h3>Откуда вы узнали о нас?</h3>
+                <div class="brief__radio">
+                  <input type="radio" name="hear-about-us" id="about-recomand">
+                  <label for="about-recomand">Рекомендации</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="hear-about-us" id="about-portfolio">
+                  <label for="about-portfolio">Портфолио</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="hear-about-us" id="about-rating">
+                  <label for="about-rating">Рейтинг</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="hear-about-us" id="about-ads">
+                  <label for="about-ads">Реклама</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="hear-about-us" id="about-smi">
+                  <label for="about-smi">СМИ</label>
+                </div>
+                <div class="brief__radio">
+                  <input type="radio" name="hear-about-us" id="about-social-media">
+                  <label for="about-social-media">Социальные сети</label>
+                </div>
+              </div>
+              <div class="btnandtext">
+                <button class="btn" type="submit"><span>Отправить запрос</span>
+                  <svg class="icon">
+                    <use xlink:href="img/sprites/sprite.svg#right"></use>
+                  </svg>
+                </button>
+                <p>Нажимая на кнопку, вы даете<a href="#согласие">согласие</a>на обработку
+                  персональных данных и соглашаетесь с политикой
+                  конфиденциальности.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
       <footer class="footer">
         <div class="footer__wrap container">

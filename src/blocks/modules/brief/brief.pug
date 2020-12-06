@@ -1,0 +1,159 @@
+.brief.section.section-index#contacts(data-bg-color="#FF9092;#FE7EB9" data-section-index="6")
+    .brief__wrap.container-min.section__text
+        script.
+            function submitForm(form) {
+              console.log(form)
+            }
+
+        form.js-form-validator(data-submit="submitForm")
+            h2 Заполните бриф
+            p Оставьте заявку, либо звоните, мы пообщаемся и сами все за вас заполним: +38 (068) 112 112 8
+
+            .brief__label
+                h3 Укажите тип Вашего проекта
+                .brief__label-items
+                    .brief__radio
+                        input(type="radio" name="type-project" id="service-portal")
+                        label(for="service-portal") Cервис или портал
+
+                    .brief__radio
+                        input(type="radio" name="type-project" id="dev-integ")
+                        label(for="dev-integ") Разработка и интеграция
+
+                    .brief__radio
+                        input(type="radio" name="type-project" id="internet-mag")
+                        label(for="internet-mag") Интернет-магазин
+
+                    .brief__radio
+                        input(type="radio" name="type-project" id="lending")
+                        label(for="lending") Лендинг
+
+                    .brief__radio
+                        input(type="radio" name="type-project" id="proj-other")
+                        label(for="proj-other") Другое
+
+            .brief__label
+                h3 Выберите необходимые услуги
+                .brief__radio
+                    input(type="radio" name="select-service" id="create-site")
+                    label(for="create-site") Создание сайта
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="serv-dev-integ")
+                    label(for="serv-dev-integ") Разработка и интеграция
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="serv-design")
+                    label(for="serv-design") Дизайн
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="strategy-prod")
+                    label(for="strategy-prod") Стратегия продвижения
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="search-optim")
+                    label(for="search-optim") Поисковая оптимизация
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="ads-company")
+                    label(for="ads-company") Рекламная компания
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="serv-marketing")
+                    label(for="serv-marketing") Маркетинговое исследование
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="serv-support")
+                    label(for="serv-support") Поддержка
+
+                .brief__radio
+                    input(type="radio" name="select-service" id="serv-other")
+                    label(for="serv-other") Другое
+
+            .brief__label
+                h3 Предполагаемый бюджет
+
+                .brief__radio
+                    input(type="radio" name="estimated-budget" id="dollors-800")
+                    label(for="dollors-800") Менее $300
+
+                .brief__radio
+                    input(type="radio" name="estimated-budget" id="dollors-300-500")
+                    label(for="dollors-300-500") $300-$500
+
+                .brief__radio
+                    input(type="radio" name="estimated-budget" id="dollors-500-1000")
+                    label(for="dollors-500-1000") $500-$1000
+
+                .brief__radio
+                    input(type="radio" name="estimated-budget" id="dollors-1000-2500")
+                    label(for="dollors-1000-2500") $1000-$2500
+
+                .brief__radio
+                    input(type="radio" name="estimated-budget" id="dollors-2500-5000")
+                    label(for="dollors-2500-5000") $2500-$5000
+
+                .brief__radio
+                    input(type="radio" name="estimated-budget" id="dollors-5000-10000")
+                    label(for="dollors-5000-10000") $5000-$10000
+
+                .brief__radio
+                    input(type="radio" name="estimated-budget" id="dollors-10000")
+                    label(for="dollors-10000") Более $10000
+
+
+            .brief__input
+                h3 Задача
+
+                .half
+                    input(placeholder="Описание" type="text" name="desc" required)
+
+                .input-file
+                    input(type="file" name="file" id="input-file")
+                    label(for="input-file").btn-ico
+                        +svg("clip")
+                        span Прикрепить файл
+
+                .half
+                    input(placeholder="Ваше имя" name="name" type="text" required)
+                    input.js-phone-mask(placeholder="Ваш телефон" type="phone" name="phone" required)
+                    input(placeholder="E-mail" type="email" name="email" required)
+
+            .brief__label.brief__label--last
+                h3 Откуда вы узнали о нас?
+
+                .brief__radio
+                    input(type="radio" name="hear-about-us" id="about-recomand")
+                    label(for="about-recomand") Рекомендации
+
+                .brief__radio
+                    input(type="radio" name="hear-about-us" id="about-portfolio")
+                    label(for="about-portfolio") Портфолио
+
+                .brief__radio
+                    input(type="radio" name="hear-about-us" id="about-rating")
+                    label(for="about-rating") Рейтинг
+
+                .brief__radio
+                    input(type="radio" name="hear-about-us" id="about-ads")
+                    label(for="about-ads") Реклама
+
+                .brief__radio
+                    input(type="radio" name="hear-about-us" id="about-smi")
+                    label(for="about-smi") СМИ
+
+                .brief__radio
+                    input(type="radio" name="hear-about-us" id="about-social-media")
+                    label(for="about-social-media") Социальные сети
+
+
+            .btnandtext
+                button(type="submit").btn
+                    span Отправить запрос
+                    +svg("right")
+
+                p Нажимая на кнопку, вы даете
+                    a(href="#согласие") согласие
+                    | на обработку
+                    | персональных данных и соглашаетесь с политикой
+                    | конфиденциальности.

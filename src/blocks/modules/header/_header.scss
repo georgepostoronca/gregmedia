@@ -26,9 +26,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(249, 254, 255, 0.3);
+    background: rgba(249, 254, 255, 0.8);
     filter: blur(10px);
-    //margin-top: -17px;
+    z-index: 1;
+    margin-top: -10px;
   }
 
   &__logo {

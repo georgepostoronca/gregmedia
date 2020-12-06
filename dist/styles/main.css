@@ -1161,6 +1161,82 @@ span {
   line-height: 11px;
 }
 
+.btn-ico {
+  min-height: 57px;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  appearance: none;
+  box-shadow: none;
+  padding-left: 19px;
+  padding-right: 28px;
+  border: 1px solid #272727;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.btn-ico:hover,
+.btn-ico:focus {
+  background-color: #272727;
+}
+
+.btn-ico:hover span,
+.btn-ico:focus span {
+  color: #F9FEFF;
+}
+
+.btn-ico:hover svg,
+.btn-ico:focus svg {
+  fill: white;
+}
+
+.btn-ico:after,
+.btn-ico:before {
+  display: none;
+}
+
+.btn-ico span {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #272727;
+  margin: 0;
+  transition: .4s;
+  text-align: left;
+}
+
+.btn-ico svg {
+  width: 18px;
+  height: 25px;
+  fill: #272727;
+  transition: .4s;
+  margin-right: 19px;
+}
+
+.input-file {
+  position: relative;
+  display: inline-block;
+  margin-top: 29px;
+  overflow: hidden;
+}
+
+.input-file input {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  top: -100%;
+}
+
 .btn {
   min-height: 65px;
   width: auto;
@@ -1327,6 +1403,33 @@ span {
   padding-left: 67px;
 }
 
+input {
+  font-size: 16px;
+  line-height: 20px;
+  color: #272727;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  border: 0;
+  border-bottom: 1.5px solid rgba(39, 39, 39, 0.8);
+  padding-left: 9px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: transparent;
+}
+
+input + .error-message {
+  display: none;
+}
+
+input.error {
+  border-color: red;
+}
+
+input::placeholder {
+  opacity: 0.8;
+}
+
 .header {
   width: 100%;
   position: fixed;
@@ -1352,8 +1455,10 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(249, 254, 255, 0.3);
+  background: rgba(249, 254, 255, 0.8);
   filter: blur(10px);
+  z-index: 1;
+  margin-top: -10px;
 }
 
 .header__logo {
@@ -1445,6 +1550,23 @@ span {
   overflow: hidden;
 }
 
+body.loaded .tiser .tiser__wrap:after,
+body.loaded .tiser .tiser__wrap:before {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+body.loaded .tiser .tiser__content:after,
+body.loaded .tiser .tiser__content:before {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+body.loaded .tiser .tiser__bg img {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
 .tiser__wrap {
   position: relative;
   height: 100%;
@@ -1459,6 +1581,9 @@ span {
   left: 15%;
   display: block;
   background: url("../img/min-dotted.svg") center center no-repeat;
+  transform: rotate(-100deg) scale(0.8);
+  transition: .5s;
+  opacity: 0;
 }
 
 .tiser__wrap:before {
@@ -1471,6 +1596,9 @@ span {
   left: 4.5%;
   border-radius: 100%;
   background: linear-gradient(182.79deg, #FF9785 -25.17%, #FF9092 18.4%, #ED76D3 75.54%, #DA46FF 111.98%);
+  transform: rotate(-100deg) scale(0.8);
+  transition: .5s;
+  opacity: 0;
 }
 
 .tiser__bg {
@@ -1480,6 +1608,12 @@ span {
   transition: .2s;
   margin-top: -118px;
   left: 12.8%;
+}
+
+.tiser__bg img {
+  transform: rotate(-100deg) scale(0.6);
+  transition: .5s;
+  opacity: 0;
 }
 
 .tiser__content {
@@ -1503,6 +1637,9 @@ span {
   display: block;
   background: url("../img/min-dotted.svg") center center no-repeat;
   z-index: 3;
+  transform: rotate(-20deg) scale(0.8);
+  transition: .5s;
+  opacity: 0;
 }
 
 .tiser__content:before {
@@ -1515,6 +1652,9 @@ span {
   display: block;
   background: url("../img/dotted.svg") center center no-repeat;
   z-index: 1;
+  transform: rotate(-20deg) scale(0.8);
+  transition: .5s;
+  opacity: 0;
 }
 
 .tiser__content h1 {
@@ -1652,6 +1792,102 @@ span {
   margin-top: 30px;
 }
 
+.brief {
+  padding-bottom: 7px;
+}
+
+.brief__wrap p {
+  margin-bottom: 64px;
+}
+
+.brief .btnandtext {
+  margin-top: 55px;
+}
+
+.brief .btnandtext p {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 44px;
+}
+
+.brief .btnandtext p a:after {
+  bottom: 2px;
+}
+
+.brief__label {
+  margin-bottom: 35px;
+}
+
+.brief__label h3 {
+  width: 100%;
+  margin-bottom: 23px;
+}
+
+.brief__label-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.brief__radio {
+  margin-right: 25px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.brief__radio input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.brief__radio input:checked ~ label {
+  background-color: #272727;
+  color: #F9FEFF;
+}
+
+.brief__radio label {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  background: #F1F1F1;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 12px 28px;
+  transition: .2s;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.brief__input {
+  margin-bottom: 6px;
+}
+
+.brief__input h3 {
+  margin-bottom: 6px;
+}
+
+.brief__input .half:last-child {
+  margin-bottom: 0;
+}
+
+.brief__input .input-file {
+  margin-top: 0;
+  margin-bottom: 61px;
+}
+
+.half {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.half input {
+  width: calc(50% - 62.5px);
+  margin-bottom: 42px;
+}
+
 .bg-animation {
   width: 100vw;
   height: 100vh;
@@ -1659,6 +1895,12 @@ span {
   top: 0;
   left: 0;
   z-index: -1;
+  opacity: 0;
+  transition: .5s;
+}
+
+body.circle-loaded .bg-animation {
+  opacity: 1;
 }
 
 .bg-animation canvas {
@@ -1744,14 +1986,12 @@ span {
 
   .btnandtext .btn {
     flex: 0 1 auto;
-    order: 2;
+    margin-bottom: 30px;
   }
 
   .btnandtext p {
-    order: 1;
     width: 100%;
     padding-left: 0;
-    margin-bottom: 30px;
   }
 
   .header__mail {
@@ -1764,6 +2004,14 @@ span {
 
   .career__vacancy p {
     margin-bottom: 30px;
+  }
+
+  .brief .btnandtext p {
+    padding-left: 0;
+  }
+
+  .half input {
+    width: calc(50% - 20px);
   }
 }
 
@@ -1805,6 +2053,28 @@ span {
     font-size: 75px;
   }
 
+  h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .btn-ico {
+    min-height: 46px;
+    padding-left: 14px;
+    padding-right: 17px;
+  }
+
+  .btn-ico span {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .btn-ico svg {
+    width: 15px;
+    height: 20px;
+    margin-right: 12px;
+  }
+
   .btn {
     min-height: 53px;
     padding-left: 17px;
@@ -1822,6 +2092,13 @@ span {
 
   .viewbtn {
     display: none;
+  }
+
+  input {
+    font-size: 12px;
+    padding-left: 9px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   .header__wrap {
@@ -1897,6 +2174,48 @@ span {
   .agency__wrap .down {
     margin-top: 67px;
   }
+
+  .brief__wrap {
+    padding-right: 55px;
+  }
+
+  .brief__wrap p {
+    margin-bottom: 39px;
+  }
+
+  .brief .btnandtext {
+    margin-top: 0;
+  }
+
+  .brief .btnandtext p {
+    font-size: 10px;
+    line-height: 20px;
+  }
+
+  .brief__label {
+    margin-bottom: 26px;
+  }
+
+  .brief__label--last {
+    margin-bottom: 18px;
+  }
+
+  .brief__radio {
+    margin-right: 14px;
+  }
+
+  .brief__radio label {
+    font-size: 12px;
+    padding: 9px 11px 9px;
+  }
+
+  .brief__input .input-file {
+    margin-bottom: 20px;
+  }
+
+  .half input {
+    margin-bottom: 28px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -1912,8 +2231,18 @@ span {
 }
 
 @media (max-width: 580px) {
+  h1,
+  h2 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+
   h1.max {
     font-size: 55px;
+  }
+
+  .btnandtext .btn {
+    margin-bottom: 10px;
   }
 
   .list-check {
@@ -1946,6 +2275,14 @@ span {
     text-align: left;
     padding-top: 3px;
   }
+
+  .half {
+    flex-wrap: wrap;
+  }
+
+  .half input {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1963,6 +2300,12 @@ span {
 @media (max-width: 370px) {
   h1.max {
     font-size: 40px;
+  }
+
+  .btn-ico {
+    min-height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .btn {

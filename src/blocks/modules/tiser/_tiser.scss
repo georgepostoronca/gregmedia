@@ -13,6 +13,29 @@
     }
   }
 
+  @at-root body.loaded & {
+    .tiser__wrap {
+      &:after, &:before {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+    }
+
+    .tiser__content {
+      &:after, &:before {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .tiser__bg {
+      img {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+
   &__wrap {
     position: relative;
     height: 100%;
@@ -26,6 +49,10 @@
       left: 15%;
       display: block;
       background: url("../img/min-dotted.svg") center center no-repeat;
+
+      transform: rotate(-100deg) scale(.8);
+      transition: .5s;
+      opacity: 0;
 
       @media(max-width: 768px) {
         display: none;
@@ -42,6 +69,10 @@
       left: 4.5%;
       border-radius: 100%;
       background: linear-gradient(182.79deg, #FF9785 -25.17%, #FF9092 18.4%, #ED76D3 75.54%, #DA46FF 111.98%);
+
+      transform: rotate(-100deg) scale(.8);
+      transition: .5s;
+      opacity: 0;
 
       @media(max-width: 768px) {
         width: 75px;
@@ -71,6 +102,12 @@
     @media(max-width: 768px) {
       left: 16.8%;
       top: 3.6%;
+    }
+
+    img {
+      transform: rotate(-100deg) scale(.6);
+      transition: .5s;
+      opacity: 0;
     }
   }
 
@@ -103,6 +140,10 @@
       background: url("../img/min-dotted.svg") center center no-repeat;
       z-index: 3;
 
+      transform: rotate(-20deg) scale(.8);
+      transition: .5s;
+      opacity: 0;
+
       @media(max-width: 768px) {
         bottom: inherit;
         top: 37.3%;
@@ -123,6 +164,10 @@
       display: block;
       background: url("../img/dotted.svg") center center no-repeat;
       z-index: 1;
+
+      transform: rotate(-20deg) scale(.8);
+      transition: .5s;
+      opacity: 0;
 
       @media(max-width: 768px) {
         width: 40vw;

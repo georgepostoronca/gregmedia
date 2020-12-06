@@ -160,6 +160,10 @@
       O.current_image_index = 0, O.current_image = O.images[O.current_image_index], O._cache = function (e, i) {
         e.cache(0, 0, 2 * i, 2 * i)
       }.bind(this, O, j), O._cache(), K.push(D)
+
+      setTimeout(function() {
+        document.body.classList.add("circle-loaded");
+      });
     }
     var E, H, N, L = -d,
       Y = -c,
