@@ -28,6 +28,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="bg-animation"></div>
+    <div class="viewbtn">
+      <div class="viewbtn__list"><a class="js-go-to" href="#agency"><span>Агенство</span></a><a class="js-go-to" href="#ourtask"><span>Наша задача</span></a><a class="js-go-to" href="#clients"><span>Клиенты</span></a><a class="js-go-to" href="#vacancy"><span>Вакансии</span></a><a class="js-go-to" href="#contacts"><span>Контанты</span></a></div>
+    </div>
     <div class="blockattach" id="wrapper">
       <header class="header">
         <div class="container">
@@ -49,7 +53,7 @@
         </div>
       </header>
       <div class="blockattach__content">
-        <div class="tiser section">
+        <div class="tiser section section-index" data-bg-color="#ffffff;#ffffff" data-section-index="1">
           <div class="container tiser__wrap">
             <div class="container-small tiser__content">
               <div class="tiser__bg"><img src="img/big-circle.svg" alt="circle"></div>
@@ -72,8 +76,8 @@
             <!--  span Прикрепить файл-->
           </div>
         </div>
-        <div class="agency section">
-          <div class="agency__wrap container section__content section__text">
+        <div class="agency section section-index" id="agency" data-bg-color="#FF84DF;#E169FF" data-section-index="2">
+          <div class="agency__wrap container-min section__content section__text">
             <h2>Агентство</h2>
             <p>
               Мы — digital-агентство полного цикла, основанное в 2009 году. В нашей работекреатив часто выходит за рамки digital и находит воплощение в новых форматах
@@ -87,8 +91,8 @@
             </button>
           </div>
         </div>
-        <div class="ourtask section">
-          <div class="ourtask__wrap container section__content section__text">
+        <div class="ourtask section section-index" id="ourtask" data-bg-color="#E169FF;#FF955E" data-section-index="3">
+          <div class="ourtask__wrap container-min section__content section__text">
             <h2>Наша задача</h2>
             <p>
               Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерироватьнесколько абзацев более менее осмысленного текста рыбы на русском языке, а
@@ -102,8 +106,8 @@
             </ul>
           </div>
         </div>
-        <div class="clients section">
-          <div class="clients__wrap container section__content section__text">
+        <div class="clients section section-index" id="clients" data-bg-color="#FF9092;#FE7EB9" data-section-index="4">
+          <div class="clients__wrap container-min section__content section__text">
             <h2>Клиенты</h2>
             <p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать.</p>
             <div class="clients__slider swiper-container">
@@ -131,6 +135,19 @@
             </div>
           </div>
         </div>
+        <div class="career section section-index" id="vacancy" data-bg-color="#FE7EB9;#FF9092" data-section-index="5">
+          <div class="career__wrap container-min section__content section__text">
+            <h2>Карьера</h2>
+            <p>Мы работаем с крупнейшими клиентами и делаем проекты, которым можно позавидовать. Всегда стремимся к большему и хотим видеть в своей команде людей, разделяющих наши ценности и готовых расти вместе с нами.</p>
+            <div class="btnandtext"><a class="btn" href="#"><span>Открытые вакансии</span>
+                <svg class="icon">
+                  <use xlink:href="img/sprites/sprite.svg#right"></use>
+                </svg></a>
+              <p>
+                Не нашли подходящей вакансии, но очень хотите к нам вкоманду? Пришлите свое резюме на<a href="mailto:Reg.Media@gmail.com">Reg.Media@gmail.com</a>и напишите, почему нам нужны именно вы</p>
+            </div>
+          </div>
+        </div>
       </div>
       <footer class="footer">
         <div class="footer__wrap container">
@@ -139,7 +156,32 @@
         </div>
       </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <!--script(src="js/anim.js")-->
     <script src="js/main.js"></script>
     <script src="js/vendor.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let anim = document.querySelector(".bg-animation");
+        let particleSetings = {
+          mouse_radius: 1,
+          center_collider_proportion: 0.8,
+          layers: ["6:70:6:1.1:true", "4:120:0:1:true", "4:180:7:0.9:true", "4:220:20:0.8:true"],
+          count: 10,
+          stats: true
+        }
+      
+        console.log(particleSetings, JSON.stringify(particleSetings))
+        anim.dataset.particles = JSON.stringify(particleSetings);
+      
+        let script = document.createElement("script");
+        script.src = "js/anim.js";
+        setTimeout(function () {
+          document.body.append(script);
+        });
+      });
+    </script>
   </body>
 </html>

@@ -45,14 +45,19 @@ section {
 }
 
 .container-min {
-  width: 1214px;
+  //width: 1214px;
+  width: 1136px;
   padding-left: 20px;
   padding-right: 20px;
   display: block;
   margin: 0 auto;
   box-sizing: border-box;
 
-  @media(max-width: 1214px) {
+  //@media(max-width: 1214px) {
+  //  width: 100%;
+  //}
+
+  @media(max-width: 1156px) {
     width: 100%;
   }
 }
@@ -120,13 +125,27 @@ a {
 }
 
 .section {
-  box-shadow: inset 0 0 1px 1px red;
+  //box-shadow: inset 0 0 1px 1px red;
   width: 100%;
   //height: 100vh;
   min-height: 100vh;
 
   display: flex;
   align-items: stretch;
+
+  &-index {
+    .container, .container-min {
+      @media(max-width: 1320px) {
+        width: 100%;
+        padding-left: 130px;
+      }
+
+      @media(max-width: 768px) {
+        width: 100%;
+        padding-left: 20px;
+      }
+    }
+  }
 
   &__content {
     //height: 100%;
@@ -138,6 +157,14 @@ a {
   &__text {
     padding-top: 50px;
     padding-bottom: 50px;
+
+    h2 {
+      margin-left: -4px;
+
+      @media(max-width: 768px) {
+        margin-left: -3px;
+      }
+    }
 
     p {
       width: 66%;
@@ -221,6 +248,14 @@ p {
     font-size: 9px;
     line-height: 11px;
   }
+
+  a {
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: inherit;
+  }
 }
 
 span {
@@ -229,15 +264,57 @@ span {
 }
 
 .btn {
-  //height: 65px;
+  min-height: 65px;
   width: auto;
   height: auto;
   background: $black;
   border-radius: 5px;
   border: 0;
   outline: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  appearance: none;
+  box-shadow: none;
+
+  padding-left: 34px;
+  padding-right: 34px;
+
+  border: 1px solid $black;
+
+  cursor: pointer;
+  transition: .4s;
+
+  @media(max-width: 768px) {
+    min-height: 53px;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  @media(max-width: 370px) {
+    min-height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &:hover, &:focus {
+    background-color: transparent;
+
+    span {
+      color: $black;
+    }
+
+    svg {
+      fill: $black;
+    }
+  }
+
+  &:after, &:before {
+    display: none;
+  }
 
   span {
     font-weight: bold;
@@ -245,13 +322,40 @@ span {
     line-height: 28px;
     color: #fff;
     margin: 0;
+    transition: .4s;
+    text-align: left;
+
+    @media(max-width: 768px) {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    @media(max-width: 370px) {
+      font-size: 14px;
+    }
   }
 
   svg {
-    width: 17px;
-    height: 34px;
+    width: 40px;
+    height: 20px;
     fill: #fff;
+    margin-left: 43px;
+    transition: .4s;
+
+    @media(max-width: 768px) {
+      margin-left: 20px;
+    }
+
+    @media(max-width: 370px) {
+      width: 20px;
+      height: 10px;
+      margin-left: 10px;
+    }
   }
+}
+
+.btn-min {
+
 }
 
 .down {
@@ -280,5 +384,108 @@ span {
     width: 100%;
     height: 100%;
     transition: .2s;
+  }
+}
+
+.viewbtn {
+  position: fixed;
+  left: 27px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+
+  @media(max-width: 768px) {
+    display: none;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: section;
+
+    a {
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      cursor: pointer;
+
+      &:after {
+        display: none;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 17px;
+      }
+
+      &:before {
+        counter-increment: section;
+        content: "0"counter(section);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        color: $black;
+        opacity: 0.3;
+        width: 22px;
+        display: inline-block;
+      }
+
+      &:hover, &.active, &.mPS2id-highlight {
+        span {
+          transform: translateX(6px);
+          opacity: 0.3;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      span {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 9px;
+        color: $black;
+        letter-spacing: -0.5px;
+        transform: translateX(0);
+        opacity: 0;
+        transition: .4s;
+      }
+    }
+  }
+
+}
+
+.btnandtext {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+
+  @media(max-width: 992px) {
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  .btn {
+    flex: 1 0 auto;
+
+    @media(max-width: 992px) {
+      flex: 0 1 auto;
+      order: 2;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    padding-left: 67px;
+
+    @media(max-width: 992px) {
+      order: 1;
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
   }
 }
