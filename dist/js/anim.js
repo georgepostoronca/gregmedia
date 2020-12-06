@@ -94,6 +94,7 @@
 
   var o = this,
     r = $(".bg-animation");
+  console.log(o)
   if (r.length) {
     Math.min(function () {
       var e = 1;
