@@ -36,12 +36,18 @@
       <header class="header">
         <div class="container">
           <div class="header__wrap">
+            <div class="header__btn js-open-menu">
+              <svg class="icon">
+                <use xlink:href="img/sprites/sprite.svg#menu"></use>
+              </svg>
+            </div>
             <div class="header__logo"><a href="#Агентство">
                 <svg class="icon">
                   <use xlink:href="img/sprites/sprite.svg#logo"></use>
                 </svg></a></div>
             <nav class="header__nav">
               <ul>
+                <li class="mobile"><a href="#">Главная</a></li>
                 <li><a href="#">Агентство</a></li>
                 <li><a href="#service">Услуги</a></li>
                 <li><a href="#">Презентации</a></li>
@@ -58,7 +64,7 @@
             <div class="container-small tiser__content">
               <div class="tiser__bg"><img src="img/big-circle.svg" alt="circle"></div>
               <h1 class="max">REG.MEDIA</h1><span>Digital-агентство<br>полного цикла</span>
-              <button class="down">
+              <button class="down" onclick="goToLink('#agency')">
                 <svg class="icon">
                   <use xlink:href="img/sprites/sprite.svg#down"></use>
                 </svg>
@@ -84,7 +90,7 @@
               и инструментах. Многолетняя технологическая экспертиза и понимание бизнес-
               процессов наших клиентов позволяют нам создавать проекты, о которых говорят.
             </p>
-            <button class="down">
+            <button class="down" onclick="goToLink('#ourtask')">
               <svg class="icon">
                 <use xlink:href="img/sprites/sprite.svg#down"></use>
               </svg>

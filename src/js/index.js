@@ -70,6 +70,11 @@ class ScrollTo {
   }
 }
 
+function goTo(to) {
+  $.mPageScroll2id("scrollTo",to);
+}
+window.goToLink = goTo;
+
 let scrollTo = new ScrollTo();
 scrollTo.init();
 
@@ -124,3 +129,9 @@ document.addEventListener('bouncerFormValid', function (el) {
 document.addEventListener("DOMContentLoaded", function() {
   document.body.classList.add("loaded");
 });
+
+// Opne Menu
+document.querySelector(".js-open-menu").addEventListener("click", function () {
+  document.querySelector(".header").classList.toggle("active")
+  document.body.classList.toggle("block-scroll")
+})

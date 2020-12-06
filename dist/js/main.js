@@ -248,6 +248,11 @@ var ScrollTo = /*#__PURE__*/function () {
   return ScrollTo;
 }();
 
+function goTo(to) {
+  $.mPageScroll2id("scrollTo", to);
+}
+
+window.goToLink = goTo;
 var scrollTo = new ScrollTo();
 scrollTo.init(); // Bouncer
 
@@ -296,6 +301,11 @@ document.addEventListener('bouncerFormValid', function (el) {
 }, false);
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("loaded");
+}); // Opne Menu
+
+document.querySelector(".js-open-menu").addEventListener("click", function () {
+  document.querySelector(".header").classList.toggle("active");
+  document.body.classList.toggle("block-scroll");
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
