@@ -2046,6 +2046,34 @@ body.loaded .tiser .tiser__bg img {
   position: relative;
 }
 
+.service__item.opened {
+  padding-bottom: 20px;
+}
+
+.service__item.opened .service__item-content {
+  width: 80%;
+}
+
+.service__item.opened .service__item-text {
+  display: flex;
+  padding-left: 0;
+  width: 100%;
+  position: relative;
+  padding-bottom: 0;
+  box-shadow: none;
+}
+
+.service__item.opened .service__item-text i {
+  display: none;
+}
+
+.service__item.opened .service__item-text ul {
+  padding-left: 0;
+  width: 100%;
+  box-shadow: none;
+  padding-bottom: 0;
+}
+
 .service__item:hover {
   z-index: 10;
 }
@@ -2155,7 +2183,7 @@ body.loaded .tiser .tiser__bg img {
 }
 
 .service__item-text > ul > li {
-  margin-bottom: 7px;
+  margin-bottom: 4px;
 }
 
 .service__item-text > ul > li > span {
@@ -2164,6 +2192,10 @@ body.loaded .tiser .tiser__bg img {
   font-size: 16px;
   line-height: 20px;
   word-break: break-all;
+  padding-left: 15px;
+  margin-left: -30px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .service__item-text > ul > li::marker {
@@ -2366,6 +2398,10 @@ body.circle-loaded .bg-animation {
 
   .half input {
     width: calc(50% - 20px);
+  }
+
+  .service__item-content {
+    padding-left: 20px;
   }
 
   .service__item-content h3 {
@@ -2677,6 +2713,14 @@ body.circle-loaded .bg-animation {
     margin-bottom: 46px;
   }
 
+  .service__item.opened {
+    padding-left: 0;
+  }
+
+  .service__item.opened .service__item-content {
+    width: 100%;
+  }
+
   .service__item {
     flex-wrap: wrap;
     padding-top: 45px;
@@ -2711,6 +2755,7 @@ body.circle-loaded .bg-animation {
     padding-left: 0;
     width: 100%;
     text-align: center;
+    padding-left: 20px;
   }
 
   .service__item-content h3 {
@@ -2739,12 +2784,24 @@ body.circle-loaded .bg-animation {
 
 @media (max-width: 620px) {
   .service__item {
+    padding-bottom: 20px;
+  }
+
+  .service__item {
     width: 100%;
     margin-bottom: 30px;
   }
 
   .service__item:last-child {
     margin-bottom: 0;
+  }
+
+  .service__item-text {
+    position: relative;
+    box-shadow: none;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
