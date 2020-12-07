@@ -306,6 +306,30 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector(".js-open-menu").addEventListener("click", function () {
   document.querySelector(".header").classList.toggle("active");
   document.body.classList.toggle("block-scroll");
+}); // Service Items
+
+var serviceitems = [].slice.call(document.querySelectorAll(".js-open-text"));
+var serviceitemsclose = [].slice.call(document.querySelectorAll(".js-close-text"));
+var serviceitemP = [].slice.call(document.querySelectorAll(".service__item"));
+
+function closeAllItems() {
+  serviceitemP.forEach(function (item) {
+    console.log(item);
+    item.classList.remove("active");
+  });
+}
+
+serviceitems.forEach(function (item) {
+  item.addEventListener("click", function (el) {
+    closeAllItems();
+    el.target.closest(".service__item").classList.add("active");
+  });
+});
+serviceitemsclose.forEach(function (item) {
+  item.addEventListener("click", function (el) {
+    closeAllItems();
+    el.target.closest(".service__item").classList.remove("active");
+  });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

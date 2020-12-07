@@ -47,6 +47,21 @@
 
     position: relative;
 
+    &:hover {
+      z-index: 10;
+    }
+
+    &.active {
+      z-index: 100;
+      .service__item-text {
+        display: flex;
+      }
+
+      .service__item-close {
+        opacity: 1;
+      }
+    }
+
     @media(max-width: 768px) {
       flex-wrap: wrap;
       padding-top: 45px;
@@ -62,17 +77,181 @@
       }
     }
 
+    &-close {
+      position: absolute;
+      top: 19px;
+      right: 24px;
+
+      width: 12px;
+      height: 12px;
+      transition: .2s;
+      opacity: 0;
+
+      &:hover {
+        opacity: .6;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        &:after {
+          content: "";
+          width: 120%;
+          height: 2px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background: $black;
+          transform: translate(-50%) rotate(45deg);
+        }
+
+        &:before {
+          content: "";
+          width: 120%;
+          height: 2px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background: $black;
+          transform: translate(-50%) rotate(-45deg);
+        }
+      }
+
+      &:after {
+        content: "";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+    }
+
     &-img {
       width: 78px;
       height: 78px;
+
+      position: relative;
+      z-index: 10;
 
       @media(max-width: 768px) {
         margin-bottom: 19px;
       }
     }
 
+    &-text {
+      display: none;
+      justify-content: center;
+
+      position: absolute;
+      width: 100%;
+      left: 0;
+      padding-left: 13px;
+
+      background: #F9FEFF;
+      box-shadow: 0 8px 12px rgba(174, 242, 255, 0.5);
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-top: -20px;
+      padding-top: 5px;
+      padding-bottom: 32px;
+
+      @media(max-width: 768px) {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 15px;
+      }
+
+      i {
+        display: inline-block;
+        width: 78px;
+        height: 10px;
+
+        @media(max-width: 768px) {
+          display: none;
+        }
+      }
+
+      > ul {
+        width: 60%;
+        padding-left: 44px;
+        left: 0;
+
+        box-sizing: border-box;
+        margin: 0;
+        list-style-position: inside;
+        box-sizing: border-box;
+
+        @media(max-width: 768px) {
+          width: 100%;
+          padding-left: 0;
+          text-align: left;
+        }
+
+        > li {
+          margin-bottom: 7px;
+
+          @media(max-width: 768px) {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          > span {
+            margin-left: -15px;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            word-break: break-all;
+          }
+
+          &::marker {
+            color: #467DE5;
+            font-size: 20px;
+            margin-right: 6px;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+
+            li {
+              font-size: 12px;
+              line-height: 15px;
+              padding-left: 11px;
+
+              span {
+                margin-left: 0;
+                display: block;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 15px;
+
+              }
+
+              em {
+                display: block;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 15px;
+                font-style: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+
     &-content {
+      width: 60%;
       padding-left: 44px;
+      box-sizing: border-box;
 
       @media(max-width: 768px) {
         padding-left: 0;
@@ -116,27 +295,6 @@
 
         &:hover {
           text-decoration: none;
-
-          & + ul {
-            display: block;
-          }
-        }
-      }
-
-      ul {
-        display: none;
-        position: absolute;
-        left: 0;
-        background: #F9FEFF;
-        box-shadow: 0px 0px 12px rgba(174, 242, 255, 0.5);
-        border-radius: 5px;
-        width: 100%;
-        box-sizing: border-box;
-
-        list-style: none;
-
-        ul {
-          list-style: none;
         }
       }
     }

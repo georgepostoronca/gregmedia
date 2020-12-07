@@ -134,4 +134,28 @@ document.addEventListener("DOMContentLoaded", function() {
 document.querySelector(".js-open-menu").addEventListener("click", function () {
   document.querySelector(".header").classList.toggle("active")
   document.body.classList.toggle("block-scroll")
+});
+
+// Service Items
+let serviceitems = [].slice.call(document.querySelectorAll(".js-open-text"));
+let serviceitemsclose = [].slice.call(document.querySelectorAll(".js-close-text"));
+let serviceitemP = [].slice.call(document.querySelectorAll((".service__item")));
+
+function closeAllItems() {
+  serviceitemP.forEach(item => {
+    console.log(item);
+    item.classList.remove("active");
+  });
+}
+serviceitems.forEach(item => {
+  item.addEventListener("click", el => {
+    closeAllItems();
+    el.target.closest(".service__item").classList.add("active");
+  });
+});
+serviceitemsclose.forEach(item => {
+  item.addEventListener("click", el => {
+    closeAllItems();
+    el.target.closest(".service__item").classList.remove("active");
+  });
 })
