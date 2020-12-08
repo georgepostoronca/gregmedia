@@ -16,7 +16,8 @@
     p = /(?=.*\bFirefox\b)(?=.*\bMobile\b)/i,
     f = new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)", "i"),
     y = function (e, i) {
-      return e.test(i)
+      //return e.test(i)
+      return false;
     },
     x = function (e) {
       var x = e || navigator.userAgent,
@@ -109,7 +110,11 @@
       _ = (w.count, w.mouse_radius, w.center_collider_proportion || .7),
       m = g.length,
       M = -400,
-      F = .73;
+      F = .7;
+
+    if(window.innerWidth < 768) {
+      F = .3;
+    }
     o.is_hided = !1;
     var C, I = [],
       A = isMobile ? 100 : 0,
