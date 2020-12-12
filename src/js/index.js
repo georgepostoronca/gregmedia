@@ -1,21 +1,9 @@
-import mask from "./jquery.maskedinput";
 import Bouncer from "formbouncerjs";
-import smoothscroll from 'smoothscroll-polyfill';
-
-$(".js-phone-mask").mask("+9 (999) 999 99 99", {
-  autoclear: true
-});
-
-// kick off the polyfill!
-smoothscroll.polyfill();
-
 import "./jquery.malihu.PageScroll2id.min";
-
-// core version + navigation, pagination modules:
+import "./anim";
 import Swiper, { Navigation } from "swiper";
-
-// configure Swiper to use modules
 Swiper.use([Navigation]);
+
 
 // init Swiper:
 let mySwiper = new Swiper(".swiper-container", {

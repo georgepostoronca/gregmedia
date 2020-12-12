@@ -1,4 +1,6 @@
-// let isMobile;
+let isMobile = {
+  any: false
+};
 !function (e) {
   var i = /iPhone/i,
     a = /iPod/i,
@@ -95,7 +97,6 @@
 
   var o = this,
     r = $(".bg-animation");
-  console.log(o)
   if (r.length) {
     Math.min(function () {
       var e = 1;
@@ -112,6 +113,15 @@
       M = -400,
       F = .73;
     o.is_hided = !1;
+
+    if(window.innerWidth <= 1180) {
+      F = .50;
+    }
+
+    if(window.innerWidth <= 768) {
+      F = .35;
+    }
+
     var C, I = [],
       A = isMobile ? 100 : 0,
       P = canvas = document.createElement("canvas");
