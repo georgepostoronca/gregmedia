@@ -1,13 +1,13 @@
-script(src="https://code.jquery.com/jquery-3.5.1.min.js")
-script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js")
-script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js")
-script(src="https://code.createjs.com/1.0.0/createjs.min.js")
+script(src="https://code.jquery.com/jquery-3.5.1.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.js")
+script(src="https://code.createjs.com/1.0.0/createjs.js")
 
 script(src="js/main.js")
 script(src="js/vendor.js")
 
 script.
-  let phoneMask = $(".js-phone-mask");
+  let phoneMask = $(".phone-mask-js");
   if(phoneMask.length) {
     phoneMask.mask("+9 (999) 999 99 99", {
       autoclear: true
